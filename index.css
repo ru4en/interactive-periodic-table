@@ -1,0 +1,267 @@
+body {
+    background-color: rgb(27, 27, 27);
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+.wikiLink {
+    background-color: black;
+    color: azure;
+    transition: .2s;
+}
+
+.elementsBox button {
+    height: 100%;
+    width: 100%;
+    float: left;
+    font: inherit;
+    background: none;
+    color: inherit;
+    padding: 0;
+    top: 0;
+    border: none;
+}
+
+#main {
+    height: auto;
+    width: 1500px;
+    margin: 5% auto;
+}
+
+.elementsBox {
+    height: 70px;
+    width: 70px;
+    margin: 3px;
+    border: solid 2px;
+    float: left;
+}
+
+.atomicNo {
+    font-size: 8pt;
+    font-weight: 700;
+    margin: 5 0 0 5;
+    float: left;
+}
+
+.atomicMass {
+    font-size: 8pt;
+    font-weight: 700;
+    margin: 5 5 0 0;
+    float: right;
+}
+.atomName {
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 10px 0 0 0;
+    margin: -25px 0 0 0;
+}
+
+.atomSymbol {
+    font-size: 15pt;
+    font-weight: 700;
+    text-align: center;
+    padding: 0;
+}
+
+.blank {
+    background-color: none;
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+    display: block;
+    text-align: center;
+    float: left;
+}
+
+.row {
+    margin: auto;
+    align-self: center;
+    background-color: palegoldenrod;
+    float: left;
+}
+
+#closePopup {
+    background-color: rgb(216, 216, 216);
+    position: relative;
+    padding: 10px 25px;
+    float: right;
+    border: none;
+}
+@media only screen  and (min-width : 1080px) {
+            
+    
+    .popup {
+        position: absolute;
+        width: 80%;
+        height: auto;
+        top: 5%;
+        z-index: 1;
+        border-radius: 10px;
+        float: left;
+        text-align: left;
+        padding-bottom: 4%;
+    }
+        
+    
+    
+    #closePopup:hover {
+        background-color: crimson;
+        color: white;
+    }
+    
+    #blurLayer {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.288);
+        display: none;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        border: none;
+    }
+    
+    
+    .topSection {
+        top: 0;
+        padding: 1% 0 1% 1%;
+        border-bottom: solid 2px white;
+        margin: 0 10px;
+        color: white;
+    }
+    
+    .middleSummary {
+        width: 60%;
+        float: left;
+        display: inline;
+        padding:  1% 0 1% 1%;
+        font-size: 15pt;
+    }
+    
+    .quickInfo {
+        width: 24%;
+        float: right;
+        padding: 1%;
+        border-left: solid 3px white;
+        margin: 10px 0;
+        font: inherit;
+    }
+    
+    .bottomSection {
+        float: left;
+        width: 60%;
+        padding: 0 1% 1% 1%;
+        word-wrap: break-word;
+    }
+    
+    
+
+    .popup {
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+
+
+/* inline grid for small display*/
+
+@media only screen  and (max-width : 1080px) {
+    .elementsBox {
+        width: 98%;
+    }
+	
+    
+    .atomicMass {
+        font-size: 15pt;
+        padding: 0  20px;
+    }
+
+    .atomicNo {
+        float: left;
+        font-size: 15pt;
+        padding: 0  20px;
+    }
+
+    .atomName {
+        font-size: 15pt;
+        float: left;
+        margin: 0;
+    }
+
+    .atomSymbol {
+        float: left;
+        margin: 0;
+        padding: 0 20px;
+    }
+    #main {
+        display: unset;
+        margin: 10px;
+        padding: 10%;
+    }
+
+    .atomSymbol {
+        font-size: 25pt;
+    }
+
+    .blank {
+        display: none;
+    }
+
+    .elementsBox:hover {
+        transform: none;
+    }
+	
+	.popup {
+        position: fixed;
+		width: 100%;
+		height: 100%;
+        border-radius: unset;
+        top: 0;
+        left: 0;
+        overflow-x:hidden;
+        overflow-y: auto;
+        text-align: center;
+	}
+
+
+    .topSection {
+        width: 97%;
+        top: 0;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .middleSummary {
+        width: 97%;
+        padding: 20px 0;
+    }
+    
+    .quickInfo {
+        width: 97%;
+        padding: 20px 0;
+    }
+    
+    .bottomSection {
+        padding: 20px 0;
+        word-wrap: break-word;
+    }
+
+    #blurLayer {
+        display: none;
+    }
+
+
+}

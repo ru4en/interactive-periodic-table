@@ -1,0 +1,155 @@
+
+.metalloid {
+    color: green;
+}
+
+.transition_metal {
+    color: yellow;
+}
+
+.polyatomic_nonmetal {
+    color: darkcyan;
+}
+
+.diatomic_nonmetal {
+    color: lightskyblue;
+}
+
+.noble_gas {
+    color: aqua;
+}
+
+.alkali_metal {
+    color: crimson;
+}
+
+.alkaline_earth {
+    color: orange;
+}
+
+.post-transition_metal {
+    color: yellowgreen;
+}
+
+.lanthanide {
+    color: purple;
+}
+
+.actinide {
+    color: palevioletred;
+}
+
+
+/* hover*/
+
+.metalloid:hover {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, green 0%,rgb(0, 255, 76) 100%);
+}
+
+.transition_metal:hover {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, yellow 0%,rgb(255, 230, 117) 100%);
+}
+
+.polyatomic_nonmetal:hover {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, darkcyan 0%,rgb(13, 134, 158) 100%);
+}
+
+.diatomic_nonmetal:hover {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, lightskyblue 0%,rgb(0, 125, 184) 100%);
+}
+
+.noble_gas:hover {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, aqua 0%,rgba(0, 198, 238, 0.50) 100%);
+}
+
+.alkali_metal:hover {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, crimson 0%,rgb(206, 0, 0) 100%);
+}
+
+.alkaline_earth:hover {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, orange 0%,rgb(255, 115, 0) 100%);
+}
+
+.post-transition_metal:hover {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, yellowgreen 0%,rgb(231, 235, 0) 100%);
+}
+
+.lanthanide:hover {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(45deg, purple 0%,rgb(121, 63, 116) 100%);
+}
+
+.actinide:hover {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(45deg, palevioletred 0%,rgb(177, 0, 109) 100%);
+}
+
+/*Pop ups*/
+.metalloid_popups {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, green 0%,rgb(0, 255, 76) 100%);
+}
+
+.transition_metal_popups {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, rgb(255, 255, 0) 0%,rgb(177, 144, 0) 100%);
+}
+
+.polyatomic_nonmetal_popups {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, darkcyan 0%,rgb(13, 134, 158) 100%);
+}
+
+.diatomic_nonmetal_popups {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, lightskyblue 0%,rgb(0, 125, 184) 100%);
+}
+
+.noble_gas_popups {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, aqua 0%,rgba(0, 198, 238) 100%);
+}
+
+.alkali_metal_popups {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, crimson 0%,rgb(206, 0, 0) 100%);
+}
+
+.metal_popups {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, orange 0%,rgb(255, 115, 0) 100%);
+}
+
+.post-transition_metal_popups {
+    color: rgb(59, 59, 59);
+    background: linear-gradient(45deg, yellowgreen 0%,rgb(127, 129, 0) 100%);
+}
+
+.lanthanide_popups {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(45deg, purple 0%,rgb(121, 63, 116) 100%);
+}
+
+.actinide_popups {
+    color: rgb(0, 0, 0);
+    background: linear-gradient(45deg, palevioletred 0%,rgb(177, 0, 109) 100%);
+}
+
+.elementsBox:hover {
+    transition:ease-out .2s;
+    transform: scale(1.1);
+}
+
+@media only screen  and (max-width : 1080px) {
+    .elementsBox:hover {
+        transform: none;
+    }
+}
