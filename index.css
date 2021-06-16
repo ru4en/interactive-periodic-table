@@ -93,31 +93,32 @@ button {
 
 #closePopup {
     background-color: rgb(216, 216, 216);
-    position: relative;
-    padding: 10px 25px;
-    float: right;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 50px;
     border: none;
+    border-top-right-radius: 10px;
+}
+
+#closePopup:hover , #closePopup:active{
+    background-color: crimson;
+    color: white;
+
 }
 @media only screen  and (min-width : 1080px) {
             
     
     .popup {
         position: absolute;
-        width: 80%;
         height: auto;
+        width: 60%;
         top: 5%;
-        z-index: 1;
+        z-index: 2;
         border-radius: 10px;
         float: left;
         text-align: left;
         padding-bottom: 4%;
-    }
-        
-    
-    
-    #closePopup:hover {
-        background-color: crimson;
-        color: white;
     }
     
     #blurLayer {
@@ -220,7 +221,7 @@ button {
         display: none;
     }
 
-    .elementsBox:hover {
+    .elementsBox:hover, .elementsBox:active, .elementsBox:active{
         transform: none;
     }
 	
@@ -238,24 +239,33 @@ button {
 
 
     .topSection {
-        width: 97%;
+        width: 93%;
         top: 0;
         padding: 20px 0;
-        margin: 0;
+    }
+
+    .topSection h1 {
+        height: 70px;
+        width: 70px;
+        border: 2px solid rgb(59, 59, 59);
+        border-radius: 5px;
+        margin: 3px auto;
+        padding: auto;
     }
 
     .middleSummary {
-        width: 97%;
-        padding: 20px 0;
+        width: 93%;
+        padding: 20px;
     }
     
     .quickInfo {
-        width: 97%;
-        padding: 20px 0;
+        width: 93%%;
+        padding: 20px;
     }
     
     .bottomSection {
-        padding: 20px 0;
+        width: 93%%;
+        padding: 20px;
         word-wrap: break-word;
     }
 

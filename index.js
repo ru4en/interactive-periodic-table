@@ -5,7 +5,6 @@ var columnsDiv;
 var currentElement;
 var elements = JSON.parse(JSON.stringify(
     [
-        1,
         {
             "name": "Hydrogen",
             "appearance": "colorless gas",
@@ -39,7 +38,7 @@ var elements = JSON.parse(JSON.stringify(
             ],
             "cpk-hex": "ffffff"
         },
-        17,
+        16,
         {
             "name": "Helium",
             "appearance": "colorless gas, exhibiting a red-orange glow when placed in a high-voltage electric field",
@@ -147,7 +146,7 @@ var elements = JSON.parse(JSON.stringify(
             ],
             "cpk-hex": "c2ff00"
         },
-        11,
+        10,
         {
             "name": "Boron",
             "appearance": "black-brown",
@@ -482,7 +481,7 @@ var elements = JSON.parse(JSON.stringify(
             ],
             "cpk-hex": "8aff00"
         },
-        11,
+        10,
         {
             "name": "Aluminium",
             "appearance": "silvery gray metallic",
@@ -2604,7 +2603,7 @@ var elements = JSON.parse(JSON.stringify(
             ],
             "cpk-hex": "00c900"
         },
-        2,
+        1,
         {
             "name": "Hafnium",
             "appearance": "steel gray",
@@ -3279,7 +3278,7 @@ var elements = JSON.parse(JSON.stringify(
             ],
             "cpk-hex": "007d00"
         },
-        2,
+        1,
         {
             "name": "Rutherfordium",
             "appearance": null,
@@ -3875,7 +3874,7 @@ var elements = JSON.parse(JSON.stringify(
             "ionization_energies": [],
             "cpk-hex": null
         },
-        20,
+        19,
         {
             "name": "Lanthanum",
             "appearance": "silvery white",
@@ -4496,7 +4495,7 @@ var elements = JSON.parse(JSON.stringify(
             ],
             "cpk-hex": "00ab24"
         },
-        4,
+        3,
         {
             "name": "Actinium",
             "appearance": null,
@@ -5142,31 +5141,25 @@ function openPopUp(obj) {
     div.className = `popup  ${Object.values([elements[chosenElementNo].category.replace(" ", "_")])}_popups`;
     div.id = `popup`;
     div = document.createElement('div');
-    document.getElementById(`blurLayer`).style.display = "block";
-    document.getElementById(`blurLayer`).appendChild(div);
+    document.getElementById("blurLayer").appendChild(div);
+    document.getElementById("blurLayer").style.display = "block";
 }
 
 
 function closePopup() {
     document.getElementById("popup").remove(document.getElementById("popup"));
-    document.getElementById(`blurLayer`).style.display = "none";
+    document.getElementById("blurLayer").style.display = "none";
 }
 
 
 document.addEventListener('DOMContentLoaded', function() {
         for (elementNo = 0; elementNo < elements.length; elementNo++) {
             var currentElement = elements[elementNo];
-            //console.log(elements[elementNo]);
-            console.log([elements[elementNo].category]);         
-            div.id = `element${elementNo}`;
-            if (currentElement == parseInt(currentElement, 10)) {                
-                for (i = 0; i < currentElement; i++) {
-                    div = document.createElement('div');
-                    div.className = 'blank';
-                    document.getElementById(`main`).appendChild(div);
-                }
-            }
-            else {
+            //console.log(elements[elementNo]);      
+            if (typeof elements[elementNo] === 'object'){
+                div.id = `element${elementNo}`;
+                div = document.createElement('div');
+
                 div.innerHTML = `
                 <a  href="#top">
                 <button name="${Object.values([elements[elementNo].symbol])}" onclick="openPopUp(this)">
@@ -5174,28 +5167,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="atomicMass">${Object.values([elements[elementNo].atomic_mass.toFixed( 2 )])}</p>
                 <p class="atomSymbol">${Object.values([elements[elementNo].symbol])}</p>
                 <p class="atomName">${Object.values([elements[elementNo].name])}</p>
-                </button>
-                <a>
-                `;
+                </button>`;
                 div.className = `elementsBox ${Object.values([elements[elementNo].category.replace(" ", "_")])}`;
-                div = document.createElement('div');
                 document.getElementById(`main`).appendChild(div);
             }
-        }
-        
-    }      
-);
-
-
-
-/*
-
-for (columns = 0; columns <= 18; columns++) {
-    columnsDiv = document.createElement('div');
-    columnsDiv.id = `row${columns}`;
-    columnsDiv.className = 'row';
-    document.getElementById( 'main').appendChild(columnsDiv);
-	
-	${Object.values([elements[elementNo].source])}
-
-*/
+            else if (currentElement === parseInt(currentElement, 10)) {    
+                
+                for (i = 0; i < currentElement; i++) {
+                    div = document.createElement('div');
+                    div.className = 'blank';
+                    document.getElementById(`main`).appendChild(div);
+                }
+            }    
+        }      
+    }
+    );
