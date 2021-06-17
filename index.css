@@ -4,15 +4,23 @@ body {
     margin: 0;
     max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(216, 216, 216) rgb(27, 27, 27);
+    scrollbar-width: 5px;
 }
 
 a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
+    transition: .2s;
+
 }
 
 button {
     font: inherit;
+    cursor: pointer;
+
 }
 
 .wikiLink {
@@ -45,6 +53,7 @@ button {
     margin: 3px;
     border: solid 2px;
     float: left;
+    
 }
 
 .atomicNo {
@@ -91,19 +100,48 @@ button {
     float: left;
 }
 
+.topSection h1 {
+    height: 70px;
+    width: 70px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: auto;
+    margin-top: 50px;
+    transition: .2s;
+    text-align: center;
+}
+
+.topSection h1:hover {
+    background-color: rgb(27, 27, 27);
+    transition: .2s;
+}
+
+.topSection {
+    top: 0;
+    border-bottom: solid 2px white;
+    margin: 0 10px;
+    color: white;
+    width: 93%;
+    padding: 20px 0;
+}
+
+
 #closePopup {
-    background-color: rgb(216, 216, 216);
-    position: absolute;
-    right: 0;
+    background-color: rgb(34, 34, 34);
+    position: fixed;
     height: 40px;
-    width: 50px;
+    width: 40px;
     border: none;
-    border-top-right-radius: 10px;
+    border-radius: 20px;
+    margin: 10px;
+    color: white;
+    transition: .2s;
 }
 
 #closePopup:hover , #closePopup:active{
     background-color: crimson;
     color: white;
+    transition: .2s;
 
 }
 @media only screen  and (min-width : 1080px) {
@@ -115,7 +153,7 @@ button {
         width: 60%;
         top: 5%;
         z-index: 2;
-        border-radius: 10px;
+        border-radius: 20px;
         float: left;
         text-align: left;
         padding-bottom: 4%;
@@ -126,22 +164,13 @@ button {
         height: 100%;
         position: absolute;
         background-color: rgba(0, 0, 0, 0.288);
-        display: none;
         top: 0;
         right: 0;
-        z-index: 1;
         border: none;
     }
     
     
-    .topSection {
-        top: 0;
-        padding: 1% 0 1% 1%;
-        border-bottom: solid 2px white;
-        margin: 0 10px;
-        color: white;
-    }
-    
+
     .middleSummary {
         width: 60%;
         float: left;
@@ -164,6 +193,7 @@ button {
         width: 60%;
         padding: 0 1% 1% 1%;
         word-wrap: break-word;
+        
     }
     
     
@@ -171,8 +201,10 @@ button {
     .popup {
         left:0;
         right:0;
-        margin-left:auto;
-        margin-right:auto;
+        margin:auto;
+        height: 75%;
+        width: 75%;
+        overflow-y: scroll;
     }
 }
 
@@ -223,6 +255,8 @@ button {
 
     .elementsBox:hover, .elementsBox:active, .elementsBox:active{
         transform: none;
+        transition: .2s;
+
     }
 	
 	.popup {
@@ -237,21 +271,15 @@ button {
         text-align: center;
 	}
 
-
-    .topSection {
-        width: 93%;
-        top: 0;
-        padding: 20px 0;
+    #closePopup {
+        position: fixed;
+        right: 10px;
     }
 
     .topSection h1 {
-        height: 70px;
-        width: 70px;
-        border: 2px solid rgb(59, 59, 59);
-        border-radius: 5px;
-        margin: 3px auto;
-        padding: auto;
+        margin: auto;    
     }
+
 
     .middleSummary {
         width: 93%;
@@ -259,18 +287,14 @@ button {
     }
     
     .quickInfo {
-        width: 93%%;
+        width: 93%;
         padding: 20px;
     }
     
     .bottomSection {
-        width: 93%%;
+        width: 93%;
         padding: 20px;
         word-wrap: break-word;
-    }
-
-    #blurLayer {
-        display: none;
     }
 
 

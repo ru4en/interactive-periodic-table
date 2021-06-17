@@ -5085,7 +5085,8 @@ var elements = JSON.parse(JSON.stringify(
                 470
             ],
             "cpk-hex": "c70066"
-        }
+        },
+        1
     ]
     )
     );
@@ -5098,9 +5099,7 @@ function openPopUp(obj) {
     `
     <button id="closePopup" onclick=closePopup()>x
 	</button>
-
     
-
     <div class="topSection">
     <h1>${elements[chosenElementNo].symbol}</h1>
     <h2>${elements[chosenElementNo].name}</h2>
@@ -5141,33 +5140,37 @@ function openPopUp(obj) {
     div.className = `popup  ${Object.values([elements[chosenElementNo].category.replace(" ", "_")])}_popups`;
     div.id = `popup`;
     div = document.createElement('div');
-    document.getElementById("blurLayer").appendChild(div);
-    document.getElementById("blurLayer").style.display = "block";
+    document.getElementById("main").appendChild(div);
+    
+    var button = document.createElement('button');
+    button.id = `blurLayer`;
+    button.onclick="myFunction()";
+    document.getElementById("main").appendChild(button);
+    blurLayer.onclick = function(){closePopup()}; 
+
 }
 
 
+
 function closePopup() {
-    document.getElementById("popup").remove(document.getElementById("popup"));
-    document.getElementById("blurLayer").style.display = "none";
+    document.getElementById("main").removeChild(document.getElementById("popup"));
+    document.getElementById("main").removeChild(document.getElementById("blurLayer"));
 }
 
 
 document.addEventListener('DOMContentLoaded', function() {
         for (elementNo = 0; elementNo < elements.length; elementNo++) {
             var currentElement = elements[elementNo];
-            //console.log(elements[elementNo]);      
+            console.log(elements[elementNo]);      
             if (typeof elements[elementNo] === 'object'){
-                div.id = `element${elementNo}`;
                 div = document.createElement('div');
-
                 div.innerHTML = `
                 <a  href="#top">
                 <button name="${Object.values([elements[elementNo].symbol])}" onclick="openPopUp(this)">
                 <p class="atomicNo">${Object.values([elements[elementNo].number])}</p>
                 <p class="atomicMass">${Object.values([elements[elementNo].atomic_mass.toFixed( 2 )])}</p>
                 <p class="atomSymbol">${Object.values([elements[elementNo].symbol])}</p>
-                <p class="atomName">${Object.values([elements[elementNo].name])}</p>
-                </button>`;
+                <p class="atomName">${Object.values([elements[elementNo].name])}</p>`;
                 div.className = `elementsBox ${Object.values([elements[elementNo].category.replace(" ", "_")])}`;
                 document.getElementById(`main`).appendChild(div);
             }
@@ -5181,4 +5184,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }    
         }      
     }
-    );
+);

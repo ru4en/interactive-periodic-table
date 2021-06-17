@@ -80,6 +80,8 @@
 .post-transition_metal:hover {
     color: rgb(59, 59, 59);
     background: linear-gradient(45deg, yellowgreen 0%,rgb(231, 235, 0) 100%);
+    transition: 2.2s;
+
 }
 
 .lanthanide:hover {
@@ -151,5 +153,6 @@
 @media only screen  and (max-width : 1080px) {
     .elementsBox:hover {
         transform: none;
+
     }
 }
